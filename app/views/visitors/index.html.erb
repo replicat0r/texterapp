@@ -1,1 +1,57 @@
-<h3>Welcome</h3>
+<h1>Textr</h1>
+<h2>The texting thing</h2>
+<div class='send'>
+  <%= form_tag("/message", method: "post") do %>
+    <h3>send text</h3>
+    <table>
+      <tr>
+        <td>
+          <label>Enter number(s)</label>
+          <small>seperated by commas</small>
+        </td>
+        <td><%= text_field_tag(:phone_number) %></td>
+      </tr>
+      <tr>
+        <td><label>Enter message</label></td>
+        <td><%= text_field_tag(:message) %></td>
+      </tr>
+    </table>
+    <%= submit_tag('Send Text') %>
+  <% end %>
+</div>
+
+<hr>
+<div class='send'>
+  
+    <!-- <h3>retrieve texts</h3>
+    <div>
+      <div>
+        <%= radio_button_tag(:option, "latest") %>
+        <%= label_tag(:company_latest, "Most recent text") %>
+      </div>
+      <div>
+        <%= radio_button_tag(:option, "today") %>
+        <%= label_tag(:option_today, "All texts from today") %>
+      </div>
+      <div>
+        <%= radio_button_tag(:option, "all") %>
+        <%= label_tag(:option_all, "All texts") %>
+      </div>
+    </div> -->
+    <%#= submit_tag('get texts') %>
+      
+      <h3>Messages Recieved Today</h3>
+    <table style='background-color:white'>
+    <% @messages_recieved.each do |m| %>
+      <tr>
+        <td>
+          <%= m.from %>: 
+        </td>
+        <td style='padding-left:10px'>
+          <%= m.body %>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+    
+</div>

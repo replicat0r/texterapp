@@ -1,0 +1,55 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  phone: 1
+  location: MyString
+  website: MyString
+  score: 
+  products: MyString
+  services: MyString
+  brands: MyString
+  styles: MyString
+  specialties: MyString
+  year: 1
+  num_of_emp: 1
+  return_pol: MyString
+  payment: MyString
+  licenses: MyString
+  membership: MyString
+  liability: false
+  worker_comp: false
+  bonded: false
+  contract: false
+  warrenty: MyString
+  diplomas: MyString
+  project_min: MyString
+  project_rate: MyString
+  company_profile: MyString
+
+two:
+  name: MyString
+  phone: 1
+  location: MyString
+  website: MyString
+  score: 
+  products: MyString
+  services: MyString
+  brands: MyString
+  styles: MyString
+  specialties: MyString
+  year: 1
+  num_of_emp: 1
+  return_pol: MyString
+  payment: MyString
+  licenses: MyString
+  membership: MyString
+  liability: false
+  worker_comp: false
+  bonded: false
+  contract: false
+  warrenty: MyString
+  diplomas: MyString
+  project_min: MyString
+  project_rate: MyString
+  company_profile: MyString

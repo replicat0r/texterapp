@@ -1,4 +1,4 @@
-class VisitorsController < ApplicationController
+class ElectriciansController < ApplicationController
     def index
         account_sid = 'AC9c3937ae39e14dcf3480f9f20efe885b'
         auth_token = 'ff290364c6a0b627d4dd1d420be3bcfa'
@@ -10,7 +10,11 @@ class VisitorsController < ApplicationController
             }
         )
 
+        @electricians = Electrician.all
+        @column_names = Electrician.column_names
+        
     end
+
 
     def sendtext
         numbers = params[:phone_number].split(',')
@@ -32,17 +36,8 @@ class VisitorsController < ApplicationController
     end
 
     def import
-        xlsx = Roo::Excelx.new("./homestars_data.xlsx")
-        listings = {}
-        xlsx.sheets.each do |sheet|
-            spreadsheet = xlsx.sheet(sheet)
-            header = spreadsheet.row(2)
-            listings[sheet] = []
-            (2..spreadsheet.last_row).each do |i|
-                row = Hash[[header, spreadsheet.row(i)].transpose]
-                listings[sheet] << row
-            end
-        end
+        Electrician.import(params[:file])
+        redirect_to root_url, notice: "Electricians imported."
     end
 
 

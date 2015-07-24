@@ -55,3 +55,38 @@
     </table>
     
 </div>
+
+<h2>Import Electricians</h2>
+
+<%= form_tag import_electricians_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
+
+
+<div class="col-sm-12">
+    <table class="table table-bordered contacts ">
+        <thead>
+            <tr>
+                <% @column_names.each do |column| %>
+                <th>
+                    <strong><%=column.titleize %></strong>
+                </th>
+                <%end %>
+            </tr>
+        </thead>
+        <tbody>
+            <% @electricians.each do |c| %>
+            <tr>
+            <% @column_names.each do |column| %>
+            <td><%= c[column] %></td>
+            <% end %>
+
+            
+
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+
+</div>

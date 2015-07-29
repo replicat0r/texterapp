@@ -11,7 +11,7 @@ class Electrician < ActiveRecord::Base
             # listings[sheet] = []
             (3..spreadsheet.last_row).each do |i|
                 row = Hash[[header, spreadsheet.row(i)].transpose]
-                puts row[:liability]
+                
                 # listings[sheet] << row
                 electrician = new
                 electrician.attributes = row.to_hash.slice(*electrician.attribute_names())

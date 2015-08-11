@@ -14,34 +14,35 @@
 ActiveRecord::Schema.define(version: 20150724200912) do
 
   create_table "electricians", force: :cascade do |t|
+    t.string   "category"
     t.string   "name"
-    t.integer  "phone",           limit: 8
+    t.integer  "phone",        limit: 8
     t.string   "location"
     t.string   "website"
     t.decimal  "score"
     t.integer  "num_reviews"
     t.string   "products"
-    t.string   "services"
+    t.text     "services"
     t.string   "brands"
     t.string   "styles"
-    t.string   "specialties"
+    t.text     "specialties"
     t.string   "year"
     t.integer  "num_of_emp"
     t.string   "return_pol"
     t.string   "payment"
     t.string   "licenses"
     t.string   "membership"
-    t.integer  "liability",       limit: 1
-    t.integer  "worker_comp",     limit: 1
-    t.integer  "bonded",          limit: 1
-    t.integer  "contract",        limit: 1
-    t.string   "warrenty"
+    t.integer  "liability",    limit: 1
+    t.integer  "worker_comp",  limit: 1
+    t.integer  "bonded",       limit: 1
+    t.integer  "contract",     limit: 1
+    t.string   "warranty"
     t.string   "diplomas"
     t.string   "project_min"
     t.string   "project_rate"
-    t.string   "company_profile"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.text     "profile"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
 end

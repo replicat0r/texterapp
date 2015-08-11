@@ -6,10 +6,10 @@ class Electrician < ActiveRecord::Base
         listings = {}
         # xlsx.sheets.each do |sheet|
 
-            spreadsheet = xlsx.sheet('electricians')
-            header = spreadsheet.row(2)
+            spreadsheet = xlsx.sheet('Sheet1')
+            header = spreadsheet.row(1)
             # listings[sheet] = []
-            (3..spreadsheet.last_row).each do |i|
+            (2..spreadsheet.last_row).each do |i|
                 row = Hash[[header, spreadsheet.row(i)].transpose]
                 
                 # listings[sheet] << row

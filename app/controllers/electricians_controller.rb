@@ -13,9 +13,7 @@ class ElectriciansController < ApplicationController
         @electricians = Electrician.all
         @column_names = Electrician.column_names
 
-        @electricians.each do |elec|
-            puts elec.phone
-        end
+        
         
     end
 
